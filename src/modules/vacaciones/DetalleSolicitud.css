@@ -1,0 +1,220 @@
+.detalle-view-container {
+  padding: 20px 40px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.detalle-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Izquierda más ancho */
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* --- TARJETA DE INFORMACIÓN (IZQUIERDA) --- */
+.info-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+  flex: 1;
+}
+
+.info-value {
+  flex: 2;
+  font-size: 16px;
+  color: #000;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.days-badge {
+  margin-left: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Etiquetas de estado */
+.status-tag {
+  padding: 5px 15px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.tag-rechazada { background-color: #f87171; } /* Rojo suave */
+.tag-aprobada { background-color: #8ed232; } /* Verde */
+.tag-pendiente { background-color: #fcd34d; color: #78350f; } /* Amarillo */
+
+/* --- TARJETA DE HISTORIAL (DERECHA) --- */
+.history-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  /* Aseguramos que la tarjeta no crezca infinitamente */
+  display: flex;
+  flex-direction: column;
+  max-height: 600px; /* Altura máxima de la tarjeta entera */
+}
+
+.history-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 20px;
+  flex-shrink: 0; /* Evita que el título se aplaste */
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto; /* Scroll vertical */
+  padding-right: 10px; /* Espacio para que el scroll no tape texto */
+  flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.timeline-date-separator {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: #333;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 10px;
+  padding-left: 10px; /* Indentación visual */
+}
+
+.timeline-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-time {
+  font-weight: 400;
+  color: #666;
+  margin-left: 5px;
+}
+
+.timeline-content {
+  font-size: 13px;
+  color: #444;
+}
+
+/* Estilo para la barra de scroll del historial */
+.timeline-container::-webkit-scrollbar {
+  width: 6px;
+}
+.timeline-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+/* --- FOOTER DE ACCIONES --- */
+.actions-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.left-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Botones específicos */
+.btn-action-yellow {
+  background-color: #fde047; /* Amarillo */
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-action-yellow:hover { background-color: #facc15; }
+
+.btn-action-green {
+  background-color: #8ed232;
+  color: white;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-action-outline-red {
+  background: transparent;
+  color: #000; /* Texto negro según diseño */
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-action-outline-red:hover {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.btn-volver-outline {
+  background: white;
+  border: 1px solid #f87171; /* Borde rojizo suave */
+  color: #555;
+  padding: 8px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-volver-outline:hover {
+  background-color: #fff1f2;
+}

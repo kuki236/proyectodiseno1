@@ -1,0 +1,228 @@
+.registro-container {
+  padding: 30px 50px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.registro-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.registro-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  max-width: 900px;
+}
+
+/* Layout del Formulario */
+.form-row {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 40px; /* Espacio amplio entre columnas como en la imagen */
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.three-cols-date {
+  display: flex;
+  gap: 30px;
+  align-items: flex-end; /* Alinear abajo para que coincidan las líneas */
+}
+
+/* Estilos de Inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 15px;
+  color: #000;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Inputs estilo "línea abajo" */
+.form-input-underline,
+.form-select-underline {
+  border: none;
+  border-bottom: 1px solid #000; /* Línea negra sólida */
+  padding: 8px 0;
+  font-size: 15px;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  color: #333;
+}
+
+.form-input-underline::placeholder {
+  color: #999;
+}
+
+.form-input-underline:focus,
+.form-select-underline:focus {
+  border-bottom: 2px solid #8ed232; /* Verde al foco */
+}
+
+.readonly {
+  color: #666;
+  background-color: transparent;
+}
+
+/* TextArea con borde completo */
+.form-textarea-box {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-textarea-box:focus {
+  outline: none;
+  border-color: #8ed232;
+  box-shadow: 0 0 0 3px rgba(142, 210, 50, 0.1);
+}
+
+/* Días label */
+.center-vertical {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.days-label {
+  font-size: 16px;
+  color: #000;
+}
+
+/* Botones */
+.form-actions-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.right-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-submit-yellow {
+  background-color: #fde047; /* Amarillo intenso */
+  color: #333;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+.btn-submit-yellow:hover { background-color: #facc15; }
+
+.btn-outline-gray {
+  background: white;
+  border: 1px solid #666;
+  color: #444;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-outline-gray:hover { background-color: #f3f4f6; }
+
+.btn-outline-red {
+  background: white;
+  border: 1px solid #ef4444;
+  color: #ef4444; /* Texto rojo */
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-outline-red:hover { background-color: #fef2f2; }
+
+
+/* AUTOCOMPLETADO */
+.autocomplete-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Lista de sugerencias flotante */
+.suggestions-list {
+  position: absolute;
+  top: 100%; /* Justo debajo del input */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0 0 8px 8px; /* Bordes redondeados solo abajo */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 50; /* Encima de otros elementos */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.1s;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f3f4f6; /* Color gris suave al pasar mouse */
+}
+
+.suggestion-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.suggestion-meta {
+  font-size: 12px;
+  color: #6b7280; /* Gris texto secundario */
+  margin-top: 2px;
+}
+
+.no-results {
+  padding: 15px;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+  cursor: default;
+}
+
+/* Icono dentro del input */
+.input-icon-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none; /* Click atraviesa al input */
+}

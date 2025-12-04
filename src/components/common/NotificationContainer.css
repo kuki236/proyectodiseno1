@@ -1,0 +1,129 @@
+.notification-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+  max-width: 500px;
+  width: calc(100% - 40px);
+}
+
+.notification {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  pointer-events: auto;
+  animation: slideIn 0.3s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notification-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.notification-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-message {
+  flex: 1;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.notification-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.notification-close:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.notification-success {
+  border-left: 4px solid var(--color-success);
+}
+
+.notification-success .notification-icon {
+  color: var(--color-success);
+}
+
+.notification-error {
+  border-left: 4px solid var(--color-error);
+}
+
+.notification-error .notification-icon {
+  color: var(--color-error);
+}
+
+.notification-warning {
+  border-left: 4px solid var(--color-warning);
+}
+
+.notification-warning .notification-icon {
+  color: var(--color-warning);
+}
+
+.notification-info {
+  border-left: 4px solid var(--color-primary);
+}
+
+.notification-info .notification-icon {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .notification-container {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .notification {
+    padding: 12px;
+  }
+
+  .notification-message {
+    font-size: 13px;
+  }
+}
+
